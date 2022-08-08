@@ -3,8 +3,10 @@
   <div id="plot-<%= plot.id %>">
     <h3>Plot #<%= plot.number %></h3>
     <strong>Plants: </strong>
-    <% plot.plants.each do |plant| %>
-      <p><%= plant.name %></p>
+    <% plot.plant_plots.each do |plant_plot| %>
+      <div id="plant-<%= plant_plot.id %>">
+        <p><%= plant_plot.plant.name %> - <%= link_to 'Remove Plant', "/plant_plots/#{plant_plot.id}", method: :delete %></p>
+      </div>
     <% end %>
   </div>
 <% end %>
